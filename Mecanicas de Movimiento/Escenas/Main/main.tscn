@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://k6cvn6mfur61"]
+
+[ext_resource type="PackedScene" uid="uid://ckp8cbiy3ego1" path="res://Escenas/Player/player.tscn" id="1_di8y6"]
+[ext_resource type="PackedScene" uid="uid://ddhxrkg0pxc6b" path="res://Escenas/Objeto/objeto_de_salto.tscn" id="2_fm3iu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d67cd"]
+size = Vector2(1225.5, 138)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_di8y6")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(596.25, 572)
+shape = SubResource("RectangleShape2D_d67cd")
+
+[node name="Objeto de salto" parent="." instance=ExtResource("2_fm3iu")]
+position = Vector2(361, 422)
+scale = Vector2(0.373338, 0.397726)

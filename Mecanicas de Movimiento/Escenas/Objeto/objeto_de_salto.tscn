@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddhxrkg0pxc6b"]
+
+[ext_resource type="Texture2D" uid="uid://droqkwicvpco1" path="res://icon.svg" id="1_amnu5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obcrm"]
+radius = 74.2428
+
+[node name="Objeto de salto" type="Area2D" groups=["Ayuda"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_obcrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_amnu5")

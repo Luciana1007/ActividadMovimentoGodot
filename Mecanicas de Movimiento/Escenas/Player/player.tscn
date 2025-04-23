@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckp8cbiy3ego1"]
+
+[ext_resource type="Texture2D" uid="uid://droqkwicvpco1" path="res://icon.svg" id="1_eu8fj"]
+[ext_resource type="Script" uid="uid://b1v0685unct3u" path="res://Escenas/Player/player.gd" id="1_u4u6t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4u6t"]
+size = Vector2(123, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs2dv"]
+size = Vector2(125, 68)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_u4u6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eu8fj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_u4u6t")
+
+[node name="GolpeAbajo" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GolpeAbajo"]
+position = Vector2(-103, -4)
+shape = SubResource("RectangleShape2D_rs2dv")
+
+[connection signal="area_entered" from="GolpeAbajo" to="." method="_on_golpe_abajo_area_entered"]
